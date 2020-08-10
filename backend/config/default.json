@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://costa:1jtqd7Ybf@costaconnector.encuo.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://costa:1jtqd7Ybf@costaconnector.encuo.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
