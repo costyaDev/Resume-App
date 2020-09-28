@@ -1,13 +1,16 @@
 import React, { useState, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-const CreateProfile = (props) => {
+import { createProfile } from "../../actions/profile";
+import { Link, withRouter } from "react-router-dom";
+
+const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     company: "",
     website: "",
     location: "",
     status: "",
-    skils: "",
+    skills: "",
     githubusername: "",
     bio: "",
     twitter: "",
@@ -22,7 +25,7 @@ const CreateProfile = (props) => {
     website,
     location,
     status,
-    skils,
+    skills,
     githubusername,
     bio,
     twitter,
@@ -37,6 +40,12 @@ const CreateProfile = (props) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    createProfile(formData, history);
+    // console.log(formData);
+  };
+
   return (
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
@@ -45,7 +54,7 @@ const CreateProfile = (props) => {
         profile stand out
       </p>
       <small>* = required field</small>
-      <form className="form">
+      <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <select name="status" value={status} onChange={(e) => onChange(e)}>
             <option value="0">* Select Professional Status</option>
@@ -103,7 +112,7 @@ const CreateProfile = (props) => {
             type="text"
             placeholder="* Skills"
             name="skills"
-            value={skils}
+            value={skills}
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
@@ -132,7 +141,6 @@ const CreateProfile = (props) => {
           ></textarea>
           <small className="form-text">Tell us a little about yourself</small>
         </div>
-
         <div className="my-2">
           <button
             onClick={() => toggleSocialInput(!displaySocialInput)}
@@ -203,14 +211,16 @@ const CreateProfile = (props) => {
         )}
 
         <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">
+        <Link className="btn btn-light my-1" to="/dashboard">
           Go Back
-        </a>
+        </Link>
       </form>
     </Fragment>
   );
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+};
 
-export default CreateProfile;
+export default connect(null, { createProfile })(withRouter(CreateProfile));
