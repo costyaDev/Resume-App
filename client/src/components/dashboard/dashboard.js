@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
 import Spinner from "../layout/spinner";
 import { Link } from "react-router-dom";
-import DashBoardAction from "./DashBoardAction";
+import DashBoardAction from "./DashboardAction";
 
 const Dashboard = ({
   getCurrentProfile,
