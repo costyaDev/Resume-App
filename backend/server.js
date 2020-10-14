@@ -1,5 +1,5 @@
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 
 const connectDB = require("./config/db");
 
@@ -9,7 +9,7 @@ const posts = require("./api/posts");
 const auth = require("./api/auth");
 
 const app = express();
-// app.use(cors());
+app.use(cors());
 
 // connect Databaase
 

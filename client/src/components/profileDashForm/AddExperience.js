@@ -93,7 +93,7 @@ const AddExperience = ({ addExperience, history }) => {
             Current Job
           </p>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <h4>To Date</h4>
           <input
             type="date"
@@ -103,7 +103,7 @@ const AddExperience = ({ addExperience, history }) => {
             disabled={toDateDisables ? "disabled" : ""}
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <textarea
             name="description"
             cols="30"
@@ -113,8 +113,8 @@ const AddExperience = ({ addExperience, history }) => {
             onChange={(e) => onChange(e)}
           ></textarea>
         </div>
-        <input type="submit" class="btn btn-primary my-1" />
-        <a class="btn btn-light my-1" href="dashboard.html">
+        <input type="submit" className="btn btn-primary my-1" />
+        <a className="btn btn-light my-1" href="dashboard">
           Go Back
         </a>
       </form>

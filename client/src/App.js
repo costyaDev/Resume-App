@@ -16,6 +16,8 @@ import PrivatRouting from "./components/routing/PrivatRouting";
 import CreateProfile from "./components/profileDashForm/CreateProfile";
 import EditProfile from "./components/profileDashForm/EditProfile";
 import AddExperience from "./components/profileDashForm/AddExperience";
+import AddEducation from "./components/profileDashForm/AddEducation";
+import { addExperience } from "./actions/profile";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -52,6 +54,11 @@ const App = () => {
                 exact
                 path="/add-experience"
                 component={AddExperience}
+              />
+              <PrivatRouting
+                exact
+                path="/add-education"
+                component={AddEducation}
               />
             </Switch>
           </section>
