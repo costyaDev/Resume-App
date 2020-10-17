@@ -60,7 +60,7 @@ const EditProfile = ({
       instagram:
         loading || !profile.social.instagram ? "" : profile.social.instagram,
     });
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
 
   const [displaySocialInput, toggleSocialInput] = useState(false);
 

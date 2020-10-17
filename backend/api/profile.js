@@ -108,7 +108,7 @@ router.post(
   }
 );
 
-// @route get api/profiile
+// @route get api/profile
 // @dsec get all profile
 // @accsess public
 
@@ -122,7 +122,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// @route get api/profiile/user/:user_id
+// @route get api/profile/user/:user_id
 // @dsec get profile by id
 // @accsess public
 
