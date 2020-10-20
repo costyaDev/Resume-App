@@ -88,7 +88,7 @@ const ProfileSchema = new mongoose.Schema({
     },
   ],
   social: {
-    youtybe: {
+    youtube: {
       type: String,
     },
     twitter: {
